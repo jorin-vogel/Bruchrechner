@@ -2,6 +2,8 @@ class Fraktioncalculator.Calculation extends Batman.Model
 
   @persist Batman.LocalStorage
 
+  @encode 'operator', 'denominator1', 'denominator2', 'numerator1', 'numerator2'
+
   @global yes
 
   operator: '+'

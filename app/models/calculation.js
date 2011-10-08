@@ -12,6 +12,7 @@ Fraktioncalculator.Calculation = (function() {
     Calculation.__super__.constructor.apply(this, arguments);
   }
   Calculation.persist(Batman.LocalStorage);
+  Calculation.encode('operator', 'denominator1', 'denominator2', 'numerator1', 'numerator2');
   Calculation.global(true);
   Calculation.prototype.operator = '+';
   Calculation.accessor('showNo_fraktion', function() {
