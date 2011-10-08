@@ -21,6 +21,7 @@ Fraktioncalculator.AppController = (function() {
   AppController.prototype.index = function() {
     $('#container').fadeIn(1000);
     $('#operators').selectable();
+    $('#calculations').sortable();
     this.set('calc', new Calculation);
     return this.render(false);
   };

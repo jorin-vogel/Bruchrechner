@@ -3,6 +3,7 @@ class Fraktioncalculator.AppController extends Batman.Controller
   index: ->
     $('#container').fadeIn(1000)
     $('#operators').selectable()
+    $('#calculations').sortable()
     @set 'calc', new Calculation
     @render no
 
