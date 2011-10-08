@@ -1,0 +1,82 @@
+!!! html
+html(lang="en")
+  head
+    title BatmanExpress
+    script(src="lib/coffee-script.js")
+    script(src="lib/es5-shim.js")
+    script(src="lib/dist/batman.js")
+    script(src="lib/jquery-1.6.4.min.js")
+    script(src="lib/jquery-ui-1.8.16.custom.min.js")
+    script(src="application.js")
+    link(rel="stylesheet", href="stylesheets/ui-lightness/jquery-ui-1.8.16.custom.css")
+    link(rel="stylesheet", href="stylesheets/application.css")
+    link(rel="stylesheet", href="stylesheets/reset.css")
+    link(rel="stylesheet", href="stylesheets/helpers.css")
+  body
+    #container(data-context="controllers.app")
+      #head
+        h1(data-event-click="test") Bruchrechner
+      #calc
+        .fraktion
+          input.cell(type="number", data-bind="calc.denominator1", data-event-submit="create")
+          .hr
+          input.cell(type="number", data-bind="calc.numerator1", data-event-submit="create")
+        #operators(data-event-selectableselected="setOperator")
+          .ui-selected +
+          div -
+          div x
+          div :
+        .fraktion
+          input.cell(type="number", data-bind="calc.denominator2", data-event-submit="create")
+          .hr
+          input.cell(type="number", data-bind="calc.numerator2", data-event-submit="create")
+        .optns
+          p =
+        .optns(data-showif="calc.negative") 
+          p -
+        .null(data-showif="calc.showNo_fraktion", data-bind="calc.noFraktion")
+        .result(data-hideif="calc.showNo_fraktion")
+          .cell(data-source="calc.denominatorView")
+          .hr
+          .cell(data-source="calc.numeratorView")
+      #buttons
+        button.button(data-event-click="create")
+          img(src="images/submit.png", alt="", width="15px")
+        button.button(data-event-click="reset")
+          img(src="images/reset.png", alt="", width="15px")
+        button.button(data-event-click="shortening")
+          img(src="images/short_enabled.png", alt="", width="15px", data-showif="calc.shortening")
+          img(src="images/short_disabled.png", alt="", width="15px", data-hideif="calc.shortening")
+      #calculations
+        .calc(data-foreach-thing="Calculation.all", data-event-doubleclick="reedit")
+          .fraktion
+            .cell(type="number", data-bind="thing.denominator1")
+            .hr
+            .cell(type="number", data-bind="thing.numerator1")
+          .operator(data-bind="thing.operator")
+          .fraktion
+            .cell(type="number", data-bind="thing.denominator2")
+            .hr
+            .cell(type="number", data-bind="thing.numerator2")
+          .optns
+            p =
+          .optns(data-showif="thing.negative")
+            p -
+          .result
+            .cell(data-source="thing.denominatorView")
+            .hr
+            .cell(data-source="thing.numeratorView")
+          img#delete(src="images/delete.png", alt="", data-event-click="thing.destroy")
+      #clear 
+        a(data-event-click="clear") clear history
+
+      #foot 
+        a(href="http://github.com/jorin-vogel/Bruchrechner") check out github
+        script
+          $.each( ("blur focus focusin focusout load resize scroll unload dblclick mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave select keydown keypress keyup error selectableselected").split(" "), function(i,e){
+            Batman.DOM.events[e] = function (node, callback) {
+              $(node).bind(e, callback);
+            };
+          });
+
+          Fraktioncalculator.run();
