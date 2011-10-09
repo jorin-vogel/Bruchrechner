@@ -17,7 +17,7 @@ class Fraktioncalculator.Calculation extends Batman.Model
     if @get('numeratorResult') is 0
       0
     else
-      @get('denominatorResult')
+      @get('denominatorView')
 
   @accessor 'negative', ->
     den = @get('denominatorResult') >= 0

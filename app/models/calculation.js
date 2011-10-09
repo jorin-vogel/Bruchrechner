@@ -25,7 +25,7 @@ Fraktioncalculator.Calculation = (function() {
     if (this.get('numeratorResult') === 0) {
       return 0;
     } else {
-      return this.get('denominatorResult');
+      return this.get('denominatorView');
     }
   });
   Calculation.accessor('negative', function() {
