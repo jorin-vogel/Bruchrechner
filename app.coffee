@@ -1,4 +1,4 @@
-path = require('path')
+path = require('path')----
 express = require('express')
 stylus = require 'stylus'
 app = module.exports = express.createServer()
