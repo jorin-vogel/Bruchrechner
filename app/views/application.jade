@@ -39,13 +39,20 @@ html(lang="en")
           .hr
           .cell(data-source="calc.numeratorView")
       #buttons
-        button.button(data-event-click="create")
-          img(src="images/submit.png", alt="", width="15px")
-        button.button(data-event-click="reset")
-          img(src="images/reset.png", alt="", width="15px")
-        button.button(data-event-click="shortening")
-          img(src="images/short_enabled.png", alt="", width="15px", data-showif="calc.shortening")
-          img(src="images/short_disabled.png", alt="", width="15px", data-hideif="calc.shortening")
+        div
+          button(data-event-click="create")
+            img(src="images/submit.png", alt="", width="15px")
+          span save & continue
+        div
+          button(data-event-click="reset")
+            img(src="images/reset.png", alt="", width="15px")
+          span reset
+        div
+          button(data-event-click="shortening")
+            img(src="images/short_enabled.png", alt="", width="15px", data-showif="calc.shortening")
+            img(src="images/short_disabled.png", alt="", width="15px", data-hideif="calc.shortening")
+          span enable shortening
+
       #calculations
         .calc(data-foreach-thing="Calculation.all", data-event-doubleclick="reedit")
           .fraktion

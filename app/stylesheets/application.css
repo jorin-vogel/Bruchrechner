@@ -5,7 +5,6 @@ body{background:#e6e6e6}
 .null{font-size:22px;margin:6px;background:#fff;padding:26px 0;text-align:center}
 .hr{background:#000;height:1px}
 .fraktion .hr{margin:9px 7px}
-.button{margin-top:10px}
 .cell{font-size:18px;text-align:center;border:none;margin:6px}
 #calc .fraktion .cell{border-radius:2px;background:rgba(0,0,0,0.10);width:80px}
 #calc .optns{margin:34px 5px}
@@ -28,7 +27,10 @@ body{background:#e6e6e6}
 .calc:hover{background:rgba(71,0,168,0.40);}
 .calc:hover #delete{opacity:1}
 .calc #delete{position:relative;cursor:pointer;opacity:0;top:-6px;right:-8px}
-#buttons{margin-top:-3px;float:left;width:35px}
+#buttons{margin-top:-3px;float:left;text-align:left;}
+#buttons button{margin-top:10px}
+#buttons span{visibility:hidden;margin:5px;cursor:default}
+#buttons div:hover span{visibility:visible}
 #clear{float:right;margin:-16px 35px 0 0;position:relative}
 #clear a,#foot a{font-size:11px;color:#000;text-decoration:underline;cursor:pointer;}
 #clear a:hover,#foot a:hover{color:#808080}
