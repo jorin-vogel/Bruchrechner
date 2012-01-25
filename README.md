@@ -6,9 +6,21 @@ A little calculating app - built for experimenting with new technologies
 
 Feel free to clone the repo and do with it what ever you want! 
 
+
+#Install
+
+* Prerequirements: You have [node](http://nodejs.org/) and [npm](http://npmjs.org/) installed
+* clone the repo `git clone git@github.com:jorin-vogel/Bruchrechner.git`
+* change into the directory `cd Bruchrechner`
+* install the packages `npm install`
+* start the server `node server.js`
+* visit [http://localhost:3000/](http://localhost:3000/) in your browser
+
+
 #Demo
 
 There is a demo aviable on [Heroku](http://bruchrechner.herokuapp.com/)
+
 
 #Technologies
 
