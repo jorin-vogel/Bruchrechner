@@ -2,9 +2,10 @@
 
 A little calculating app - built for experimenting with new technologies 
 
-# 
 
 Feel free to clone the repo and do with it what ever you want! 
+
+![screenshot](https://github.com/jorin-vogel/Bruchrechner/raw/master/screenshot.png)
 
 
 #Install
