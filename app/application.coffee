@@ -1,4 +1,4 @@
-class Fraktioncalculator extends Batman.App
+class Fractioncalculator extends Batman.App
   # Make Application available in the global namespace so it can be used
   # as a namespace and bound to in views.
   @global yes
