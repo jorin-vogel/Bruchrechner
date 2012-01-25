@@ -33,16 +33,16 @@ app.get '/', (req, res) ->
   res.render 'application', layout: false
 
 app.get "/application.js", (req, res) ->
-  fs.readFile __dirname + '/dev/application.coffee', 'utf8', (err, file) ->
+  fs.readFile __dirname + '/app/application.coffee', 'utf8', (err, file) ->
     js = coffee.compile(file)
     res.writeHead 200,
       "Content-Type": "text/javascript"
     res.end js
 
 app.get "/application.css", (req, res) ->
-  fs.readFile __dirname + "/dev/stylesheets/application.styl", "utf8", (err, file) ->
+  fs.readFile __dirname + "/app/stylesheets/application.styl", "utf8", (err, file) ->
     stylus.render file,
-      filename: __dirname + "/dev/stylesheets/application"
+      filename: __dirname + "/app/stylesheets/application"
     , (err, css) ->
       throw err  if err
       res.writeHead 200,
